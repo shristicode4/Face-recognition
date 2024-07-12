@@ -5,7 +5,7 @@ import face_recognition
 known_face_encoding = []
 known_face_names = []
 
-# Load known faces and their names here
+# Load known faces and their names 
 known_person1_image = face_recognition.load_image_file(r"C:\Users\user\Documents\Personal Pro\Face-recognition\Person1.jpg")
 known_person2_image = face_recognition.load_image_file(r"C:\Users\user\Documents\Personal Pro\Face-recognition\Person2.jpg")
 known_person3_image = face_recognition.load_image_file(r"C:\Users\user\Documents\Personal Pro\Face-recognition\Person3.jpg")
