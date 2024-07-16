@@ -8,7 +8,7 @@ def preprocess_image(img):
     img = img.astype('float32') / 255.0  # Normalize the image
     return img
 
-l
+
 def get_embedding(model, img):
     img = np.expand_dims(img, axis=0)
     return model.predict(img)
