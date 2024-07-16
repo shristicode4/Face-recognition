@@ -3,27 +3,21 @@ import numpy as np
 import cv2
 from tensorflow.keras.models import load_model
 
-# Function to load and preprocess a single image
 def preprocess_image(img):
-    img = cv2.resize(img, (64, 64))  # Resize to the input size expected by the model
+    img = cv2.resize(img, (64, 64))  
     img = img.astype('float32') / 255.0  # Normalize the image
     return img
 
-# Function to get the embedding from the model
+l
 def get_embedding(model, img):
     img = np.expand_dims(img, axis=0)
     return model.predict(img)
 
-# Function to verify if two images are of the same person
 def verify_images(model, img1, img2):
-    # Get the embeddings for the two images
     embedding1 = get_embedding(model, img1)
     embedding2 = get_embedding(model, img2)
-
-    # Compute the Euclidean distance between the embeddings
     distance = np.linalg.norm(embedding1 - embedding2)
 
-    # Threshold for verification; this value may need to be tuned
     threshold = 0.5
 
     print(f"Distance between embeddings: {distance}")
@@ -54,7 +48,6 @@ def capture_image_from_camera(window_name="Capture Image"):
     cv2.destroyAllWindows()
     return captured_image
 
-# Main function
 if __name__ == "__main__":
     # Load the trained model
     model_path = 'C:/Users/ss/OneDrive/Desktop/face_ver/cnn_face_verification.h5'
